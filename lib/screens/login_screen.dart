@@ -3,7 +3,8 @@ import 'package:survey_project/screens/first_question.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
-  const LoginScreen({Key key}) : super(key: key);
+  // final String employeeID;
+  // const LoginScreen(this.employeeID);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -22,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-
+    int employeeID;
     return Scaffold(
       body: Container(
         constraints: BoxConstraints.expand(),
@@ -77,9 +78,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 10,),
                   ElevatedButton(
                     onPressed: () {
+                      setState(() {
+                        employeeID = int.parse(controllerEmployeeNumber.text);
+                      });
                       FocusScope.of(context).unfocus();
-                      print('Employee Number : ${controllerEmployeeNumber.text}');
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const FirstQuestion()));
+                      print('Employee Number : $employeeID');
+                      Navigator.push(context, MaterialPageRoute(builder: (context) =>  FirstQuestion(employeeId: employeeID,)));
                     },
                     child: Text(' تسجيل الدخول '),
                   )

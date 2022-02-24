@@ -1,21 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:survey_project/screens/first_question.dart';
 
 class EmojiWidget extends StatelessWidget {
 
   final String imagePath;
   final String text;
   final int emojiRate;
+  final Function onClicked;
 
-  EmojiWidget({@required this.imagePath , @required this.text , this.emojiRate});
+  EmojiWidget({@required this.imagePath , @required this.text , this.emojiRate , @required this.onClicked});
 
   @override
   Widget build(BuildContext context) {
     return Flexible(
       child: TextButton(
-        onPressed: (){
-          print('emoji rate $emojiRate');
-        },
+        onPressed: onClicked,
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
