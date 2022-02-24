@@ -1,7 +1,5 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:survey_project/screens/first_question.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -30,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/loginscreen_background.jpg'),
+            image: AssetImage('images/login_screen_background.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -77,11 +75,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(height: 10,),
-                  RaisedButton(
-                    color: Colors.blue, // background
-                    textColor: Colors.white, // foreground
+                  ElevatedButton(
                     onPressed: () {
+                      FocusScope.of(context).unfocus();
                       print('Employee Number : ${controllerEmployeeNumber.text}');
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const FirstQuestion()));
                     },
                     child: Text(' تسجيل الدخول '),
                   )
