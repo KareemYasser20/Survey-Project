@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:survey_project/models/survey_model.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:survey_project/screens/login_screen.dart';
 import '../Functions/question_counts_Functions.dart';
 import '../widgets/pie_chart_widget.dart';
 import '../widgets/text_chart_widget.dart';
@@ -96,6 +97,19 @@ class _ChartsState extends State<Charts> {
 
                   TextChartWidget(text: ' هل التدريب الذي تحصل عليه بصفة دورية كافي لتأدية عملك بالجودة المطلوبة؟ ',),
                   PieChartWidget(map: QuestionsCount.getSixteenthQuestionsCount(_loadedData),),
+
+                  SizedBox(height: 15,),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) =>  LoginScreen()));
+                        },
+                        child: Text(' العودة للصفحة الرئيسية '),
+                      ),
+                    ),
+                  )
 
                 ],
               )

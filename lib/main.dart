@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       initialRoute: Charts.id,
+       initialRoute: LoginScreen.id,
       routes: {
          LoginScreen.id : (context) => LoginScreen(),
          FirstQuestion.id: (context) => FirstQuestion(),

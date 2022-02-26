@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:survey_project/screens/charts.dart';
 import 'package:survey_project/screens/first_question.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -81,10 +82,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       setState(() {
                         employeeID = int.parse(controllerEmployeeNumber.text);
                       });
-                      FocusScope.of(context).unfocus();
-                      print('Employee Number : $employeeID');
-                      Navigator.push(context, MaterialPageRoute(builder: (context) =>  FirstQuestion(employeeId: employeeID,)));
-                    },
+                      if(employeeID == 12345){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Charts()));
+                      }else{
+                        FocusScope.of(context).unfocus();
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  FirstQuestion(employeeId: employeeID,)));
+                      }
+                      },
                     child: Text(' تسجيل الدخول '),
                   )
 
