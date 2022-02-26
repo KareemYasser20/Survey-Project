@@ -4,8 +4,6 @@ import 'package:survey_project/screens/first_question.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
-  // final String employeeID;
-  // const LoginScreen(this.employeeID);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -13,10 +11,12 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController controllerEmployeeNumber;
+
   @override
   void initState() {
     super.initState();
-    initUser();}
+    initUser();
+  }
 
   void initUser(){
     controllerEmployeeNumber = TextEditingController();
@@ -83,6 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         employeeID = int.parse(controllerEmployeeNumber.text);
                       });
                       if(employeeID == 12345){
+                        // admin id to see charts
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Charts()));
                       }else{
                         FocusScope.of(context).unfocus();

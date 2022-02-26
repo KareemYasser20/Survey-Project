@@ -1,6 +1,10 @@
 import '../models/survey_model.dart';
 
 class QuestionsCount{
+
+  // Contain Function for each question to count answers for each questions
+  // and contain function return list for all questions functions.
+
   static Map<String , double> getFirstQuestionsCount(List<SurveyModel> data  ){
     Map<String , double> mapData;
     int veryHappyCounter=0 ;
@@ -9,15 +13,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].First_Question==0){
+      if (data[i].firstQuestion==0){
         verySadCounter++ ;
-      } if(data[i].First_Question == 1){
+      } if(data[i].firstQuestion == 1){
         sadCounter++;
-      }if(data[i].First_Question == 2){
+      }if(data[i].firstQuestion == 2){
         medCounter++;
-      }if(data[i].First_Question == 3){
+      }if(data[i].firstQuestion == 3){
         happyCounter++;
-      }if(data[i].First_Question == 4){
+      }if(data[i].firstQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -40,15 +44,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Second_Question==0){
+      if (data[i].secondQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Second_Question == 1){
+      } if(data[i].secondQuestion == 1){
         sadCounter++;
-      }if(data[i].Second_Question == 2){
+      }if(data[i].secondQuestion == 2){
         medCounter++;
-      }if(data[i].Second_Question == 3){
+      }if(data[i].secondQuestion == 3){
         happyCounter++;
-      }if(data[i].Second_Question == 4){
+      }if(data[i].secondQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -70,15 +74,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Third_Question==0){
+      if (data[i].thirdQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Third_Question == 1){
+      } if(data[i].thirdQuestion == 1){
         sadCounter++;
-      }if(data[i].Third_Question == 2){
+      }if(data[i].thirdQuestion == 2){
         medCounter++;
-      }if(data[i].Third_Question == 3){
+      }if(data[i].thirdQuestion == 3){
         happyCounter++;
-      }if(data[i].Third_Question == 4){
+      }if(data[i].thirdQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -100,15 +104,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Fourth_Question==0){
+      if (data[i].fourthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Fourth_Question == 1){
+      } if(data[i].fourthQuestion == 1){
         sadCounter++;
-      }if(data[i].Fourth_Question == 2){
+      }if(data[i].fourthQuestion == 2){
         medCounter++;
-      }if(data[i].Fourth_Question == 3){
+      }if(data[i].fourthQuestion == 3){
         happyCounter++;
-      }if(data[i].Fourth_Question == 4){
+      }if(data[i].fourthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -130,15 +134,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Fifth_Question==0){
+      if (data[i].fifthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Fifth_Question == 1){
+      } if(data[i].fifthQuestion == 1){
         sadCounter++;
-      }if(data[i].Fifth_Question == 2){
+      }if(data[i].fifthQuestion == 2){
         medCounter++;
-      }if(data[i].Fifth_Question == 3){
+      }if(data[i].fifthQuestion == 3){
         happyCounter++;
-      }if(data[i].Fifth_Question == 4){
+      }if(data[i].fifthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -160,15 +164,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Sixth_Question==0){
+      if (data[i].sixthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Sixth_Question == 1){
+      } if(data[i].sixthQuestion == 1){
         sadCounter++;
-      }if(data[i].Sixth_Question == 2){
+      }if(data[i].sixthQuestion == 2){
         medCounter++;
-      }if(data[i].Sixth_Question == 3){
+      }if(data[i].sixthQuestion == 3){
         happyCounter++;
-      }if(data[i].Sixth_Question == 4){
+      }if(data[i].sixthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -190,15 +194,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Seventh_Question==0){
+      if (data[i].seventhQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Seventh_Question == 1){
+      } if(data[i].seventhQuestion == 1){
         sadCounter++;
-      }if(data[i].Seventh_Question == 2){
+      }if(data[i].seventhQuestion == 2){
         medCounter++;
-      }if(data[i].Seventh_Question == 3){
+      }if(data[i].seventhQuestion == 3){
         happyCounter++;
-      }if(data[i].Seventh_Question == 4){
+      }if(data[i].seventhQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -220,15 +224,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Eighth_Question==0){
+      if (data[i].eighthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Eighth_Question == 1){
+      } if(data[i].eighthQuestion == 1){
         sadCounter++;
-      }if(data[i].Eighth_Question == 2){
+      }if(data[i].eighthQuestion == 2){
         medCounter++;
-      }if(data[i].Eighth_Question == 3){
+      }if(data[i].eighthQuestion == 3){
         happyCounter++;
-      }if(data[i].Eighth_Question == 4){
+      }if(data[i].eighthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -250,15 +254,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Ninth_Question==0){
+      if (data[i].ninthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Ninth_Question == 1){
+      } if(data[i].ninthQuestion == 1){
         sadCounter++;
-      }if(data[i].Ninth_Question == 2){
+      }if(data[i].ninthQuestion == 2){
         medCounter++;
-      }if(data[i].Ninth_Question == 3){
+      }if(data[i].ninthQuestion == 3){
         happyCounter++;
-      }if(data[i].Ninth_Question == 4){
+      }if(data[i].ninthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -281,15 +285,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Tenth_Question==0){
+      if (data[i].tenthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Tenth_Question == 1){
+      } if(data[i].tenthQuestion == 1){
         sadCounter++;
-      }if(data[i].Tenth_Question == 2){
+      }if(data[i].tenthQuestion == 2){
         medCounter++;
-      }if(data[i].Tenth_Question == 3){
+      }if(data[i].tenthQuestion == 3){
         happyCounter++;
-      }if(data[i].Tenth_Question == 4){
+      }if(data[i].tenthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -311,15 +315,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Eleventh_Question==0){
+      if (data[i].eleventhQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Eleventh_Question == 1){
+      } if(data[i].eleventhQuestion == 1){
         sadCounter++;
-      }if(data[i].Eleventh_Question == 2){
+      }if(data[i].eleventhQuestion == 2){
         medCounter++;
-      }if(data[i].Eleventh_Question == 3){
+      }if(data[i].eleventhQuestion == 3){
         happyCounter++;
-      }if(data[i].Eleventh_Question == 4){
+      }if(data[i].eleventhQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -341,15 +345,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Twelfth_Question==0){
+      if (data[i].twelfthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Twelfth_Question == 1){
+      } if(data[i].twelfthQuestion == 1){
         sadCounter++;
-      }if(data[i].Twelfth_Question == 2){
+      }if(data[i].twelfthQuestion == 2){
         medCounter++;
-      }if(data[i].Twelfth_Question == 3){
+      }if(data[i].twelfthQuestion == 3){
         happyCounter++;
-      }if(data[i].Twelfth_Question == 4){
+      }if(data[i].twelfthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -371,15 +375,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Thirteenth_Question==0){
+      if (data[i].thirteenthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Thirteenth_Question == 1){
+      } if(data[i].thirteenthQuestion == 1){
         sadCounter++;
-      }if(data[i].Thirteenth_Question == 2){
+      }if(data[i].thirteenthQuestion == 2){
         medCounter++;
-      }if(data[i].Thirteenth_Question == 3){
+      }if(data[i].thirteenthQuestion == 3){
         happyCounter++;
-      }if(data[i].Thirteenth_Question == 4){
+      }if(data[i].thirteenthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -401,15 +405,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Fourteenth_Question==0){
+      if (data[i].fourteenthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Fourteenth_Question == 1){
+      } if(data[i].fourteenthQuestion == 1){
         sadCounter++;
-      }if(data[i].Fourteenth_Question == 2){
+      }if(data[i].fourteenthQuestion == 2){
         medCounter++;
-      }if(data[i].Fourteenth_Question == 3){
+      }if(data[i].fourteenthQuestion == 3){
         happyCounter++;
-      }if(data[i].Fourteenth_Question == 4){
+      }if(data[i].fourteenthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -431,15 +435,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Fifteenth_Question==0){
+      if (data[i].fifteenthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Fifteenth_Question == 1){
+      } if(data[i].fifteenthQuestion == 1){
         sadCounter++;
-      }if(data[i].Fifteenth_Question == 2){
+      }if(data[i].fifteenthQuestion == 2){
         medCounter++;
-      }if(data[i].Fifteenth_Question == 3){
+      }if(data[i].fifteenthQuestion == 3){
         happyCounter++;
-      }if(data[i].Fifteenth_Question == 4){
+      }if(data[i].fifteenthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -461,15 +465,15 @@ class QuestionsCount{
     int sadCounter=0 ;
     int verySadCounter=0;
     for(var i=0 ; i<data.length ; i++){
-      if (data[i].Sixteenth_Question==0){
+      if (data[i].sixteenthQuestion==0){
         verySadCounter++ ;
-      } if(data[i].Sixteenth_Question == 1){
+      } if(data[i].sixteenthQuestion == 1){
         sadCounter++;
-      }if(data[i].Sixteenth_Question == 2){
+      }if(data[i].sixteenthQuestion == 2){
         medCounter++;
-      }if(data[i].Sixteenth_Question == 3){
+      }if(data[i].sixteenthQuestion == 3){
         happyCounter++;
-      }if(data[i].Sixteenth_Question == 4){
+      }if(data[i].sixteenthQuestion == 4){
         veryHappyCounter++;
       }
     }
@@ -485,23 +489,23 @@ class QuestionsCount{
 
 
   static List<Map<String , double>> allQuestionsCounts(List<SurveyModel> data){
-    List<Map<String , double>> countList;
-    countList.insert(0, getFirstQuestionsCount(data));
-    countList.insert(1, getSecondQuestionsCount(data));
-    countList.insert(2, getThirdQuestionsCount(data));
-    countList.insert(3, getFourthQuestionsCount(data));
-    countList.insert(4, getFifthQuestionsCount(data));
-    countList.insert(5, getSixthQuestionsCount(data));
-    countList.insert(6, getSeventhQuestionsCount(data));
-    countList.insert(7, getEighthQuestionsCount(data));
-    countList.insert(8, getNinthQuestionsCount(data));
-    countList.insert(9, getTenthQuestionsCount(data));
-    countList.insert(10, getEleventhQuestionsCount(data));
-    countList.insert(11, getTwelfthQuestionsCount(data));
-    countList.insert(12, getThirteenthQuestionsCount(data));
-    countList.insert(13, getFourteenthQuestionsCount(data));
-    countList.insert(14, getFifteenthQuestionsCount(data));
-    countList.insert(15, getSixteenthQuestionsCount(data));
+    List<Map<String , double>> countList = [];
+    countList.add(getFirstQuestionsCount(data));
+    countList.add( getSecondQuestionsCount(data));
+    countList.add( getThirdQuestionsCount(data));
+    countList.add( getFourthQuestionsCount(data));
+    countList.add( getFifthQuestionsCount(data));
+    countList.add( getSixthQuestionsCount(data));
+    countList.add( getSeventhQuestionsCount(data));
+    countList.add( getEighthQuestionsCount(data));
+    countList.add( getNinthQuestionsCount(data));
+    countList.add( getTenthQuestionsCount(data));
+    countList.add( getEleventhQuestionsCount(data));
+    countList.add( getTwelfthQuestionsCount(data));
+    countList.add( getThirteenthQuestionsCount(data));
+    countList.add( getFourteenthQuestionsCount(data));
+    countList.add( getFifteenthQuestionsCount(data));
+    countList.add( getSixteenthQuestionsCount(data));
     return countList;
   }
 

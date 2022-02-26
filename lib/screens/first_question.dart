@@ -3,6 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:survey_project/screens/login_screen.dart';
+import 'package:survey_project/screens/thanks_screen.dart';
 import '../Functions/images_text_function.dart';
 import '../widgets/EmojiWidget.dart';
 import 'package:http/http.dart' as http;
@@ -269,7 +270,7 @@ class _FirstQuestionState extends State<FirstQuestion> {
                                insert(surveyData);
                                Navigator.push(
                                  context,
-                                 MaterialPageRoute(builder: (context) => LoginScreen())
+                                 MaterialPageRoute(builder: (context) => ThanksScreen())
                                );
 
                             });

@@ -1,5 +1,6 @@
 class DataFunction{
 
+  // Contain all Questions Image Paths and all Questions Label.
 
   static String imageText(activeStep){
     switch(activeStep){
