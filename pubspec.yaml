@@ -31,6 +31,9 @@ dependencies:
   im_stepper:
   auto_size_text:
   http:
+  fl_chart:
+  pie_chart:
+  syncfusion_flutter_charts:
 
 dev_dependencies:
   flutter_test:
