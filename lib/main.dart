@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:survey_project/screens/charts.dart';
-import 'package:survey_project/screens/first_question.dart';
+import 'package:survey_project/screens/questions_screen.dart';
 import 'package:survey_project/screens/login_screen.dart';
 import 'package:survey_project/screens/thanks_screen.dart';
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
        initialRoute: LoginScreen.id,
       routes: {
          LoginScreen.id : (context) => LoginScreen(),
-         FirstQuestion.id: (context) => FirstQuestion(),
+         Questions.id: (context) => Questions(),
          Charts.id: (context) => Charts(),
         ThanksScreen.id: (context)=>ThanksScreen(),
 

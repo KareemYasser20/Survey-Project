@@ -2,32 +2,31 @@ import 'dart:convert';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:flutter/material.dart';
-import 'package:survey_project/screens/login_screen.dart';
 import 'package:survey_project/screens/thanks_screen.dart';
 import '../Functions/images_text_function.dart';
 import '../widgets/EmojiWidget.dart';
 import 'package:http/http.dart' as http;
 
 
-class FirstQuestion extends StatefulWidget {
+class Questions extends StatefulWidget {
   static const String id = 'first_question_screen';
 
-  FirstQuestion({Key key , @required this.employeeId}) : super(key: key);
+  Questions({Key key , @required this.employeeId}) : super(key: key);
   final int employeeId;
   @override
-  _FirstQuestionState createState() => _FirstQuestionState();
+  _QuestionsState createState() => _QuestionsState();
 
 }
 
-class _FirstQuestionState extends State<FirstQuestion> {
+class _QuestionsState extends State<Questions> {
 
 
   @override
   void initState() {
     super.initState();
-    print('FirstQA Page : ${widget.employeeId}');
+    // print('FirstQA Page : ${widget.employeeId}');
     surveyData.insert(0 , widget.employeeId);
-    print('First List Try : $surveyData');
+    // print('First List Try : $surveyData');
   }
 
 
@@ -74,7 +73,9 @@ class _FirstQuestionState extends State<FirstQuestion> {
   int upperBound = 15;
   List<int> surveyData = [];
   int emojiRate ;
+  Color colorContainer = Colors.white;
   String nextButtonText = 'التالي';
+  bool _emojiValidation = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -159,13 +160,20 @@ class _FirstQuestionState extends State<FirstQuestion> {
                               text: 'غير راضي جدا' ,
                               imagePath:'images/very_sad_emoji.png' ,
                               emojiRate: 0,
+                            containerColor: colorContainer,
                             onClicked: (){
                               setState(() {
                                 emojiRate = 0;
-                                print('emoji rate $emojiRate');
+                                colorContainer=Colors.blue;
+                                _emojiValidation = true;
                                 surveyData.insert(activeStep+1,emojiRate);
-                                activeStep < upperBound ? activeStep++ : activeStep == upperBound ? nextButtonText='إنهاء': null;
-                                print('Second list try: $surveyData');
+                                if(activeStep < upperBound){
+                                  activeStep++;
+                                  _emojiValidation = false;
+                                  colorContainer= Colors.white;
+                                }else if(activeStep == upperBound){
+                                  nextButtonText='إنهاء';
+                                }
                               });
                             },
                           ),
@@ -173,27 +181,41 @@ class _FirstQuestionState extends State<FirstQuestion> {
                               text: 'غير راضي' ,
                               imagePath:'images/sad_emoji.png' ,
                               emojiRate: 1,
+                            containerColor: colorContainer,
                             onClicked: (){
                               setState(() {
                                 emojiRate = 1;
-                                print('emoji rate $emojiRate');
+                                colorContainer=Colors.blue;
+                                _emojiValidation = true;
                                 surveyData.insert(activeStep+1,emojiRate);
-                                activeStep < upperBound ? activeStep++ :activeStep == upperBound ? nextButtonText='إنهاء': null;
-                                print('list : $surveyData');
+                                if(activeStep < upperBound){
+                                  activeStep++;
+                                  _emojiValidation = false;
+                                  colorContainer=Colors.white;
+                                }else if(activeStep == upperBound){
+                                  nextButtonText='إنهاء';
+                                }
                               });
                             },
                           ),
                           EmojiWidget(
                               text: 'متوسط' ,
                               imagePath:'images/medium_emoji.png' ,
+                              containerColor: colorContainer,
                               emojiRate: 2,
                             onClicked: (){
                               setState(() {
+                                _emojiValidation = true;
+                                colorContainer=Colors.blue;
                                 emojiRate = 2;
-                                print('emoji rate $emojiRate');
                                 surveyData.insert(activeStep+1,emojiRate);
-                                activeStep < upperBound ? activeStep++ :activeStep == upperBound ? nextButtonText='إنهاء': null;
-                                print('Second list try: $surveyData');
+                                if(activeStep < upperBound){
+                                  activeStep++;
+                                  _emojiValidation = false;
+                                  colorContainer = Colors.white;
+                                }else if(activeStep == upperBound){
+                                  nextButtonText='إنهاء';
+                                }
                               });
                             },
                           ),
@@ -201,13 +223,20 @@ class _FirstQuestionState extends State<FirstQuestion> {
                               text: 'راضي' ,
                               imagePath:'images/happy_emoji.png' ,
                               emojiRate: 3,
+                            containerColor: colorContainer,
                             onClicked: (){
                               setState(() {
+                                _emojiValidation = true;
+                                colorContainer = Colors.blue;
                                 emojiRate = 3;
-                                print('emoji rate $emojiRate');
                                 surveyData.insert(activeStep+1,emojiRate);
-                                activeStep < upperBound ? activeStep++ :activeStep == upperBound ? nextButtonText='إنهاء': null;
-                                print('Second list try: $surveyData');
+                                if(activeStep < upperBound){
+                                  activeStep++;
+                                  _emojiValidation = false;
+                                  colorContainer = Colors.white;
+                                }else if(activeStep == upperBound){
+                                  nextButtonText='إنهاء';
+                                }
                               });
                             },
                           ),
@@ -215,13 +244,20 @@ class _FirstQuestionState extends State<FirstQuestion> {
                               text: 'راضي جدا' ,
                               imagePath:'images/very_happy_emoji.png' ,
                               emojiRate: 4,
+                            containerColor: colorContainer,
                             onClicked: (){
                               setState(() {
+                                _emojiValidation = true;
+                                colorContainer = Colors.blue;
                                 emojiRate = 4;
-                                print('emoji rate $emojiRate');
                                 surveyData.insert(activeStep+1,emojiRate);
-                                activeStep < upperBound ? activeStep++ : activeStep == upperBound ? nextButtonText='إنهاء': null;
-                                print('Second list try: $surveyData');
+                                if(activeStep < upperBound){
+                                  activeStep++;
+                                  _emojiValidation = false;
+                                  colorContainer = Colors.white;
+                                }else if(activeStep == upperBound){
+                                  nextButtonText='إنهاء';
+                                }
                               });
                             },
                           ),
@@ -259,11 +295,11 @@ class _FirstQuestionState extends State<FirstQuestion> {
                         child: ElevatedButton(
                           onPressed: () {
                           // Increment activeStep, when the next button is tapped. However, check for upper bound.
-                          if (activeStep < upperBound) {
+                          if (activeStep < upperBound && _emojiValidation == true) {
                           setState(() {
                           activeStep++;
                           });
-                          } else if (activeStep == upperBound){
+                          } else if (activeStep == upperBound && _emojiValidation == true ){
                             setState(() {
                                nextButtonText = 'إنهاء';
                                print('Last Survey Data : $surveyData');

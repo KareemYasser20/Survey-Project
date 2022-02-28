@@ -19,6 +19,7 @@ dependencies:
   auto_size_text:
   http:
   pie_chart:
+  flutter_screenutil:
 
 dev_dependencies:
   flutter_test:

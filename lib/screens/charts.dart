@@ -58,7 +58,7 @@ class _ChartsState extends State<Charts> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   SizedBox(
-                    height: 775.0,
+                    height: 770.0,
                     child: ListView.builder(
                       scrollDirection: Axis.vertical,
                       itemCount: answerCount.length,
