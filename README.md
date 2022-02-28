@@ -1,4 +1,4 @@
-# survey_project
+# Survey Project
 
 A new Flutter project.
 
