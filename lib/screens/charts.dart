@@ -26,7 +26,7 @@ class _ChartsState extends State<Charts> {
 
   Future<void> fetchData() async {
     final response = await http
-        .get(Uri.parse('http://192.168.1.10:8090/api/survey'));
+        .get(Uri.parse('http://192.168.182.42:8090/api/survey'));
 
     if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body);

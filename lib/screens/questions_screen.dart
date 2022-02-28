@@ -1,12 +1,10 @@
-import 'dart:convert';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:flutter/material.dart';
+import 'package:survey_project/Functions/insert_data_function.dart';
 import 'package:survey_project/screens/thanks_screen.dart';
 import '../Functions/images_text_function.dart';
 import '../widgets/EmojiWidget.dart';
-import 'package:http/http.dart' as http;
-
 
 class Questions extends StatefulWidget {
   static const String id = 'first_question_screen';
@@ -20,66 +18,22 @@ class Questions extends StatefulWidget {
 
 class _QuestionsState extends State<Questions> {
 
-
   @override
   void initState() {
     super.initState();
-    // print('FirstQA Page : ${widget.employeeId}');
     surveyData.insert(0 , widget.employeeId);
-    // print('First List Try : $surveyData');
-  }
-
-
-  insert (List<int> data) async{
-
-    var url = Uri.parse('http://192.168.1.10:8090/api/survey');
-
-    try{
-
-      var res = await http.post(url
-        ,headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-        body: jsonEncode(<String, int>{
-          "Employee_ID":data[0],
-          "First_Question":data[1],
-          "Second_Question":data[2],
-          "Third_Question":data[3],
-          "Fourth_Question":data[4],
-          "Fifth_Question":data[5],
-          "Sixth_Question":data[6],
-          "Seventh_Question":data[7],
-          "Eighth_Question":data[8],
-          "Ninth_Question":data[9],
-          "Tenth_Question":data[10],
-          "Eleventh_Question":data[11],
-          "Twelfth_Question":data[12],
-          "Thirteenth_Question":data[13],
-          "Fourteenth_Question":data[14],
-          "Fifteenth_Question":data[15],
-          "Sixteenth_Question":data[16]
-        }),
-      );
-      print('res ${res.statusCode}');
-      return res;
-
-    }catch(e){
-      print('error : $e');
-    }
-
   }
 
   int activeStep = 0;
   int upperBound = 15;
   List<int> surveyData = [];
   int emojiRate ;
-  Color colorContainer = Colors.white;
   String nextButtonText = 'التالي';
   bool _emojiValidation = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body:SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -140,7 +94,6 @@ class _QuestionsState extends State<Questions> {
                               ),
                             ),
                           ),
-
                   ],
                 ),
               ),
@@ -160,17 +113,14 @@ class _QuestionsState extends State<Questions> {
                               text: 'غير راضي جدا' ,
                               imagePath:'images/very_sad_emoji.png' ,
                               emojiRate: 0,
-                            containerColor: colorContainer,
                             onClicked: (){
                               setState(() {
                                 emojiRate = 0;
-                                colorContainer=Colors.blue;
                                 _emojiValidation = true;
                                 surveyData.insert(activeStep+1,emojiRate);
                                 if(activeStep < upperBound){
                                   activeStep++;
                                   _emojiValidation = false;
-                                  colorContainer= Colors.white;
                                 }else if(activeStep == upperBound){
                                   nextButtonText='إنهاء';
                                 }
@@ -181,17 +131,14 @@ class _QuestionsState extends State<Questions> {
                               text: 'غير راضي' ,
                               imagePath:'images/sad_emoji.png' ,
                               emojiRate: 1,
-                            containerColor: colorContainer,
                             onClicked: (){
                               setState(() {
                                 emojiRate = 1;
-                                colorContainer=Colors.blue;
                                 _emojiValidation = true;
                                 surveyData.insert(activeStep+1,emojiRate);
                                 if(activeStep < upperBound){
                                   activeStep++;
                                   _emojiValidation = false;
-                                  colorContainer=Colors.white;
                                 }else if(activeStep == upperBound){
                                   nextButtonText='إنهاء';
                                 }
@@ -201,18 +148,15 @@ class _QuestionsState extends State<Questions> {
                           EmojiWidget(
                               text: 'متوسط' ,
                               imagePath:'images/medium_emoji.png' ,
-                              containerColor: colorContainer,
                               emojiRate: 2,
                             onClicked: (){
                               setState(() {
                                 _emojiValidation = true;
-                                colorContainer=Colors.blue;
                                 emojiRate = 2;
                                 surveyData.insert(activeStep+1,emojiRate);
                                 if(activeStep < upperBound){
                                   activeStep++;
                                   _emojiValidation = false;
-                                  colorContainer = Colors.white;
                                 }else if(activeStep == upperBound){
                                   nextButtonText='إنهاء';
                                 }
@@ -223,17 +167,14 @@ class _QuestionsState extends State<Questions> {
                               text: 'راضي' ,
                               imagePath:'images/happy_emoji.png' ,
                               emojiRate: 3,
-                            containerColor: colorContainer,
                             onClicked: (){
                               setState(() {
                                 _emojiValidation = true;
-                                colorContainer = Colors.blue;
                                 emojiRate = 3;
                                 surveyData.insert(activeStep+1,emojiRate);
                                 if(activeStep < upperBound){
                                   activeStep++;
                                   _emojiValidation = false;
-                                  colorContainer = Colors.white;
                                 }else if(activeStep == upperBound){
                                   nextButtonText='إنهاء';
                                 }
@@ -244,17 +185,14 @@ class _QuestionsState extends State<Questions> {
                               text: 'راضي جدا' ,
                               imagePath:'images/very_happy_emoji.png' ,
                               emojiRate: 4,
-                            containerColor: colorContainer,
                             onClicked: (){
                               setState(() {
                                 _emojiValidation = true;
-                                colorContainer = Colors.blue;
                                 emojiRate = 4;
                                 surveyData.insert(activeStep+1,emojiRate);
                                 if(activeStep < upperBound){
                                   activeStep++;
                                   _emojiValidation = false;
-                                  colorContainer = Colors.white;
                                 }else if(activeStep == upperBound){
                                   nextButtonText='إنهاء';
                                 }
@@ -303,7 +241,7 @@ class _QuestionsState extends State<Questions> {
                             setState(() {
                                nextButtonText = 'إنهاء';
                                print('Last Survey Data : $surveyData');
-                               insert(surveyData);
+                               InsertData.insertSurveyData(surveyData);
                                Navigator.push(
                                  context,
                                  MaterialPageRoute(builder: (context) => ThanksScreen())
@@ -340,4 +278,3 @@ class _QuestionsState extends State<Questions> {
     );
   }
 }
-

@@ -6,9 +6,9 @@ class EmojiWidget extends StatelessWidget {
   final String text;
   final int emojiRate;
   final Function onClicked;
-  final Color containerColor;
+  // final Color containerColor;
 
-  EmojiWidget({@required this.imagePath , @required this.text , this.emojiRate , @required this.onClicked, this.containerColor });
+  EmojiWidget({@required this.imagePath , @required this.text , this.emojiRate , @required this.onClicked, });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class EmojiWidget extends StatelessWidget {
         onPressed: onClicked,
         child: Container(
           decoration: BoxDecoration(
-            color: containerColor,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(5),
           ),
           child: Column(
